@@ -2,8 +2,7 @@ import java.util.*;
 public class Solution {
     public static int[][] pascalTriangle(int N) 
     {
-        int[][] res = new int[N][];
-        List<Integer> prev = new ArrayList<Integer>();
+          int[][] res = new int[N][];
 
         for(int i=0;i<N; i++)
         {
@@ -16,18 +15,12 @@ public class Solution {
                 }
                 else
                 {
-                    row[j] = prev.get(j-1) + prev.get(j);
+                    row[j] = res[i-1][j-1] + res[i-1][j];
                 }
 
             }
 
             res[i] = row;
-            prev = new ArrayList<>();
-
-            for (int val : row)
-            {
-                prev.add(val);
-            }
 
         }
         
